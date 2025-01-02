@@ -1,4 +1,3 @@
---[[ Loaded ]]--
 --[=[
  d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
 88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
@@ -927,19 +926,11 @@ task.spawn(C_4);
 -- StarterGui.GetKey.Main.Body.Content.Button.Button.Function
 local function C_1e()
 local script = G2L["1e"];
-	local function stringContains(mainString, subString)
-		return string.find(mainString, subString) ~= nil
-	end
-	
 	script.Parent.MouseButton1Click:Connect(function()
 		local inputText = script.Parent.Parent.Parent.TextBox.Text
+		script.Parent.Parent.Parent.TextBox.Text = "Authenticating..."
 		local key = game:GetService("HttpService"):JSONDecode(game:HttpGet("https://jsonip.com")).ip:gsub("[%.:]", "-")
-		print("Key:")
-		print(key)
-		print("")
-		print("Input")
-		print(inputText)
-		if stringContains(inputText, key) then
+		if tostring(inputText) == tostring(key) then
 			loadstring(game:HttpGet("https://vinix-networks.github.io/code/obfuscated.vinix-hub.lua"))()
 			script.Parent.Parent.Parent.Parent.Parent.Parent:Destroy()
 		else
