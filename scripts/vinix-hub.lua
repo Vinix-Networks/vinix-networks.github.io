@@ -104,7 +104,7 @@ G2L["9"]["BackgroundTransparency"] = 1;
 G2L["9"]["AnchorPoint"] = Vector2.new(1, 0);
 G2L["9"]["Size"] = UDim2.new(0, 200, 0, 50);
 G2L["9"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["9"]["Text"] = [[Show / Hide with Left CTRL]];
+G2L["9"]["Text"] = [[Show / Hide with Left ALT]];
 G2L["9"]["Name"] = [[Note]];
 G2L["9"]["Position"] = UDim2.new(1, -15, 0, 25);
 
@@ -243,7 +243,7 @@ G2L["16"]["PlaceholderText"] = [[Enter Your Key Here]];
 G2L["16"]["Size"] = UDim2.new(0.7, 0, 0.35, -100);
 G2L["16"]["Position"] = UDim2.new(0.5, 0, 0.2, 0);
 G2L["16"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["16"]["Text"] = [[2600-100c-b245-7c99-3022-ed8e-e81e-f7d1]];
+G2L["16"]["Text"] = [[]];
 
 
 -- StarterGui.GetKey.Main.Body.Content.TextBox.UICorner
@@ -952,12 +952,8 @@ local script = G2L["21"];
 	
 	local function onKeyPress(input, gameProcessedEvent)
 		if input.UserInputType == Enum.UserInputType.Keyboard then
-			if input.KeyCode == Enum.KeyCode.LeftControl then
-				if gui.Visible == false then
-					gui.Visible = true
-				else
-					gui.Visible = false
-				end
+			if input.KeyCode == Enum.KeyCode.LeftAlt then
+				gui.Visible = not gui.Visible
 			end
 		end
 	end
