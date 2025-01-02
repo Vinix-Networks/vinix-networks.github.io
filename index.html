@@ -5,105 +5,162 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vinix by Vinix-Networks</title>
     <style>
+        /* Reset and base styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Consolas', 'Courier New', monospace;
         }
 
         body {
-            background-color: #1e1e1e;
+            background: linear-gradient(135deg, #0d0d0d, #1e1e1e);
             color: #fff;
-            line-height: 1.6;
+            overflow-x: hidden;
         }
 
         header {
-            background-color: #000;
+            background: #000;
             padding: 20px;
             text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         header .logo {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: bold;
             letter-spacing: 3px;
+            background: linear-gradient(90deg, #ff6ec7, #7ad8d8);
+            -webkit-background-clip: text;
+            color: transparent;
         }
 
         header .logo span {
-            color: #f5f5f5;
+            color: #fff;
+            font-size: 1.2rem;
+            display: block;
+            font-weight: lighter;
         }
 
         .main-content {
             text-align: center;
-            padding: 40px 20px;
+            padding: 60px 20px;
+            animation: fadeIn 2s ease-in-out;
         }
 
         .headline {
-            font-size: 3rem;
+            font-size: 4rem;
             font-weight: bold;
             margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
         }
 
         .description {
-            font-size: 1.25rem;
-            margin-bottom: 30px;
+            font-size: 1.5rem;
+            margin-bottom: 40px;
             font-weight: 300;
+            color: rgba(255, 255, 255, 0.8);
         }
 
         .button-container {
-            margin-bottom: 30px;
+            margin-bottom: 50px;
         }
 
         .cta-button {
-            background-color: #fff;
+            background: linear-gradient(90deg, #ff6ec7, #7ad8d8);
             color: #000;
-            padding: 15px 30px;
+            padding: 15px 40px;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 50px;
             font-size: 1.25rem;
             font-weight: bold;
             text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
         }
 
         .cta-button:hover {
-            background-color: #f1f1f1;
+            background: linear-gradient(90deg, #7ad8d8, #ff6ec7);
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
         }
 
         .script-container {
-            background-color: #333;
+            background: linear-gradient(145deg, #252525, #1b1b1b);
             color: #f5f5f5;
-            padding: 20px;
-            border-radius: 5px;
+            padding: 30px;
+            border-radius: 10px;
             text-align: left;
-            margin-top: 30px;
+            margin-top: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            font-family: 'Consolas', 'Courier New', monospace;
             white-space: pre-wrap;
-            font-family: "Courier New", Courier, monospace;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .script-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #ff6ec7, #7ad8d8);
+            animation: glowingBar 3s infinite linear;
         }
 
         .keyword {
-            color: #c5a5f7; /* Purple for LuaU keywords */
+            color: #c792ea;
+            font-weight: bold;
         }
 
         .function {
-            color: #7ad8d8; /* Light Blue for function names */
+            color: #82aaff;
         }
 
         .string {
-            color: #f7a4a4; /* Light Red for strings */
+            color: #c3e88d;
         }
 
         .operator {
-            color: #f7e45b; /* Yellow for operators */
+            color: #ffcb6b;
         }
 
         footer {
-            background-color: #000;
+            background: #000;
             text-align: center;
-            padding: 15px;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
             position: fixed;
             bottom: 0;
             width: 100%;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes glowingBar {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
         }
     </style>
 </head>
@@ -120,7 +177,7 @@
         </div>
         <div class="script-container">
             <h2>Script:</h2>
-            <pre><code><span class="keyword">loadstring</span>(<span class="function">game</span>:<span class="function">HttpGet</span>(<span class="string">"https://vinix-networks.github.io/scripts/vinix-hub.lua"</span>))</code></pre>
+            <pre><code><span class="keyword">loadstring</span>(<span class="function">game</span>:<span class="function">HttpGet</span>(<span class="string">"https://vinix-networks.github.io/scripts/vinix-hub.lua"</span>))()</code></pre>
         </div>
     </section>
 
