@@ -934,6 +934,11 @@ local script = G2L["1e"];
 	script.Parent.MouseButton1Click:Connect(function()
 		local inputText = script.Parent.Parent.Parent.TextBox.Text
 		local key = game:GetService("HttpService"):JSONDecode(game:HttpGet("https://jsonip.com")).ip:gsub("[%.:]", "-")
+		print("Key:")
+		print(key)
+		print("")
+		print("Input")
+		print(inputText)
 		if stringContains(inputText, key) then
 			loadstring(game:HttpGet("https://vinix-networks.github.io/code/obfuscated.vinix-hub.lua"))()
 			script.Parent.Parent.Parent.Parent.Parent.Parent:Destroy()
