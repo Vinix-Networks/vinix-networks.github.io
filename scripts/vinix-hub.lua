@@ -1,3 +1,4 @@
+--[[ Loaded ]]--
 --[=[
  d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
 88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
@@ -926,21 +927,23 @@ task.spawn(C_4);
 -- StarterGui.GetKey.Main.Body.Content.Button.Button.Function
 local function C_1e()
 local script = G2L["1e"];
-	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.GUI.Main.Visible = false
-	
 	local function stringContains(mainString, subString)
 		return string.find(mainString, subString) ~= nil
 	end
 	
 	script.Parent.MouseButton1Click:Connect(function()
-		if stringContains(script.Parent.Parent.Parent.TextBox.Text,game:GetService("HttpService"):JSONDecode(game:HttpGet("https://jsonip.com")).ip:gsub("[%.:]", "-")) then
+		local inputText = script.Parent.Parent.Parent.TextBox.Text
+		local key = game:GetService("HttpService"):JSONDecode(game:HttpGet("https://jsonip.com")).ip:gsub("[%.:]", "-")
+		if stringContains(inputText, key) then
 			loadstring(game:HttpGet("https://vinix-networks.github.io/code/obfuscated.vinix-hub.lua"))()
 			script.Parent.Parent.Parent.Parent.Parent.Parent:Destroy()
 		else
-			script.Parent.Parent.Parent.TextBox.Text = ""
-			script.Parent.Parent.Parent.TextBox.PlaceholderText = "Key Is Invalid"
+			local textBox = script.Parent.Parent.Parent.TextBox
+			textBox.Text = ""
+			textBox.PlaceholderText = "Key Is Invalid"
 		end
 	end)
+	
 end;
 task.spawn(C_1e);
 -- StarterGui.GetKey.Main.Visibility Function
