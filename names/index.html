@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People's List</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 800px;
+            border-radius: 8px;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0077b6;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .person {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .person:hover {
+            background-color: #f1f1f1;
+        }
+
+        .person img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+            object-fit: cover;
+        }
+
+        .person .name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .person .bio {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #999;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>People's List</h1>
+        
+        <div class="person">
+            <img src="https://wildernessvetsmemorial.org/2019/wp-content/uploads/2019/05/photo-unavailable.jpg" alt="Person 1">
+            <div>
+                <div class="name">Billy Franklin</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 Vinix Networks. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
