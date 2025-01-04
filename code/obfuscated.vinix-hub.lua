@@ -1025,7 +1025,7 @@ G2L["6a"]["TextColor3"] = Color3.fromRGB(226, 226, 226);
 G2L["6a"]["BackgroundTransparency"] = 1;
 G2L["6a"]["Size"] = UDim2.new(1, -40, 1, 0);
 G2L["6a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["6a"]["Text"] = [[Pearl Spy]];
+G2L["6a"]["Text"] = [[Simple Spy]];
 G2L["6a"]["Name"] = [[Label]];
 G2L["6a"]["Position"] = UDim2.new(0, 40, 0, 0);
 
@@ -1980,7 +1980,7 @@ task.spawn(C_63);
 local function C_6f()
 local script = G2L["6f"];
 	script.Parent.MouseButton1Click:Connect(function()
-		loadstring(game:HttpGet('https://raw.githubusercontent.com/Faacts/Side/main/PearlSpy'))()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/exxtremestuffs/SimpleSpySource/refs/heads/master/SimpleSpy.lua"))()
 	end)
 	
 	script.Parent.MouseEnter:Connect(function()
