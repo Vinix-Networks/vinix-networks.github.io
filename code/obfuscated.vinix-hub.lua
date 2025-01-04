@@ -2073,7 +2073,7 @@ task.spawn(C_a9);
 -- StarterGui.GUI.Main.Background.Transparency Handler
 local function C_ac()
 local script = G2L["ac"];
-	while task.wait do
+	while wait() do
 		script.Parent.ImageTransparency = (0.25 * script.Parent.Parent.BackgroundTransparency) + 0.75
 	end
 end;
