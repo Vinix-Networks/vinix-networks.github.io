@@ -7,7 +7,7 @@
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
 ]=]
 
--- Instances: 172 | Scripts: 17 | Modules: 0 | Tags: 0
+-- Instances: 173 | Scripts: 18 | Modules: 0 | Tags: 0
 local G2L = {};
 
 -- StarterGui.GUI
@@ -1628,9 +1628,14 @@ G2L["ab"] = Instance.new("UICorner", G2L["aa"]);
 G2L["ab"]["CornerRadius"] = UDim.new(0, 12);
 
 
+-- StarterGui.GUI.Main.Background.Transparency Handler
+G2L["ac"] = Instance.new("LocalScript", G2L["aa"]);
+G2L["ac"]["Name"] = [[Transparency Handler]];
+
+
 -- StarterGui.GUI.Coreify
-G2L["ac"] = Instance.new("LocalScript", G2L["1"]);
-G2L["ac"]["Name"] = [[Coreify]];
+G2L["ad"] = Instance.new("LocalScript", G2L["1"]);
+G2L["ad"]["Name"] = [[Coreify]];
 
 
 -- StarterGui.GUI.Main.Head.Function
@@ -2065,13 +2070,21 @@ local script = G2L["a9"];
 	
 end;
 task.spawn(C_a9);
--- StarterGui.GUI.Coreify
+-- StarterGui.GUI.Main.Background.Transparency Handler
 local function C_ac()
 local script = G2L["ac"];
+	while task.wait do
+		script.Parent.ImageTransparency = (0.25 * script.Parent.Parent.BackgroundTransparency) + 0.75
+	end
+end;
+task.spawn(C_ac);
+-- StarterGui.GUI.Coreify
+local function C_ad()
+local script = G2L["ad"];
 	if script.Parent.Parent.Name ~= "CoreGui" then
 		script.Parent.Parent = game:WaitForChild("CoreGui")
 	end
 end;
-task.spawn(C_ac);
+task.spawn(C_ad);
 
 return G2L["1"], require;
