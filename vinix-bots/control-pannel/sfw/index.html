@@ -150,12 +150,13 @@
 
             const formattedMessage = messageContent.replace(/>>>\s*/g, ">>>");
 
-            const webhookUrl = "https://discordapp.com/api/webhooks/1326769996772282460/aUWbxBqfNRMEZoxquAIa3ZmKYGAgiyFfHzOlWB8boIMuwhlxpQCQPFXOvJqYlMhk9jVs";
+            const sfw = "https://discordapp.com/api/webhooks/1326769996772282460/aUWbxBqfNRMEZoxquAIa3ZmKYGAgiyFfHzOlWB8boIMuwhlxpQCQPFXOvJqYlMhk9jVs";
+            const nsfw = "https://discordapp.com/api/webhooks/1326793477454954601/eUwoj1_JHj5L5EQJw9kYqneV03JGbgiTKC3yrC7nHVD2K_1ErShamQhik4FjBRK8YlYY";
             const payload = JSON.stringify({
                 content: formattedMessage
             });
 
-            fetch(webhookUrl, {
+            fetch(sfw, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
